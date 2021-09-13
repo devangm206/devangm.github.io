@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @devangm206
-- 👀 I’m interested in Python Development
+- 👀 I’m interested in Python Programming 
 - 🌱 I’m currently learning Web Devlopment in Python
 - 💻 I’m working on creating web app for a Grievance Redressal Program
 

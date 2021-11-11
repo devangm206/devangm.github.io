@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Redressal Program</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'https://kit.fontawesome.com/ff14115f99.js' %}" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="Sub-header">
+    <nav>
+        <a href="{% url 'homepage' %}"><img src="{% static 'images/logo (1).png' %}"></a>
+        <div class="nav-links">
+        <i class="fa fa-times" ></i>
+        <ul><li class="name-head"><a>WELCOME, {{request.user}}</a></li></ul>
+        <ul>
+            <li><a href="{% url 'homepage' %}">HOME</a></li>
+            <li><a href="{% url 'stugrievpage' %}">GRIEVANCE</a></li>
+            <li><a href="{% url 'aboutuspage' %}">ABOUT</a></li>
+            <li><a href="{% url 'contactuspage' %}">CONTACT</a></li>
+            <li><a href="{% url 'selectlogintype'%}">Logout</a></li>
+            <li></li>
+            
+        </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+    </nav>
+<h1>You Say, We Help</h1>
+</section>
+<!------- CONTENT OF Grievance Page ------------>
+<section class="Faculty-login">
+    <div class="container">
+        <div class="cover">
+          <div class="front">
+            <div class="text">
+              <span class="text-1">Welcome!<br></span>
+              <span class="text-2">Please enter your grievance</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="forms">
+            <div class="input-box">
+            
+            <div class="form-content">
+              <div class="login-form">
+                <div class="title">Your Grievance</div>
+              <form  method="POST">
+                  {% csrf_token%}
+
+                <div class="input-box">
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="name" placeholder="Enter Your Name" required>
+                </div>
+                <div class="input-box">
+                    	<i class="fa fa-mobile"></i>
+                    <input type="text" name="contactnum" placeholder="Enter Your Contact Number" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="input-box">
+                    	<i class="fa fa-question-circle"></i>
+                <input list="types" name="Type Of Grievance" placeholder="Type Of Grievance" required>
+                        <datalist id="types">
+                          <option value="grievance 1">
+                          <option value="grievance 2">
+                          <option value="grievance 3">
+                          <option value="grievance 4">
+                          <option value="grievance 5">
+                          <option value="grievance 6">
+                        </datalist>
+                    </div>
+                <div class="contact-col">
+                        <textarea rows="8" name="message" placeholder="Tell Us More About Your Grievance"></textarea>
+                </div>
+                <input type="submit" value="SUBMIT" class="hero-btn red-btn">
+
+            </div>
+          </form>
+         </div>
+    </div>
+</div>
+</section>
+<!------- Footer ------------>
+<section class="footer">
+    <h4>About Us</h4>
+    <p>A Grievance is any discontent or dissatisfaction, whether expressed or not, 
+        whether valid or not, arising out of anything that is <br>directly connected to the institute, 
+        and which a student thinks, believes, or even feels, is unfair, unjust or inequitable.</p>
+        
+        <div class="icons">
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-linkedin-square"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made with<i class="fa fa-heart"></i><br>by Team</p>
+        <p>COPYRIGHT 2021</p>
+</section>
+
+<!-----JavaScript for Toggle Menu----->
+<script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu(){
+          navLinks.style.right = "0";
+      }
+      function hideMenu(){
+          navLinks.style.right = "-200";
+      }
+    </script>
+
+</body>
+</html>

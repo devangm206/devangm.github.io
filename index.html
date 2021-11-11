@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Redressal Program</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <script src="{% static 'https://kit.fontawesome.com/ff14115f99.js' %}" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <nav>
+          <a href="{% url 'homepage' %}"><img src="{% static 'images/logo (1).png' %}"></a>
+            <div class="nav-links">
+            <i class="fa fa-times" ></i>
+            <ul><li class="name-head"><a>WELCOME, {{request.user}}</a></li></ul>
+            <ul>
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'stugrievpage' %}">GRIEVANCE</a></li>
+                <li><a href="{% url 'aboutuspage' %}">ABOUT</a></li>
+                <li><a href="{% url 'contactuspage' %}">CONTACT</a></li>
+                <li><a href="{% url 'selectlogintype'%}">Logout</a></li>
+            <li></li>
+            </ul>
+             </div>
+             <i class="fa fa-bars"></i>
+            </nav>
+
+            <div class="text-box">
+    <h1>Student Grievance Redressal Cell <br>Let's Make Each Day A Problem Free Day</h1>
+    <p> Students’ Grievance Redressal Cell attempts to address the genuine problems 
+        and complaints of students in the institution. The Grievance Cell is also empowered to look into the matters of 
+        harassment. Students may approach the cell to voice their grievances regarding academic matters, health services, l
+        ibrary and other services.
+    </p>
+
+        <a href="{% url 'selectlogintype' %}" class="hero-btn">Visit Us To Know More</a>
+
+</div>
+
+  </section>
+
+<!---- Objectives ---->
+
+<section class="Objectives">
+    <h1>Objectives</h1>
+    <p>The major objective of the Grievance Cell is to develop a responsive 
+        and accountable attitude among all the stakeholders in order to maintain 
+        a harmonious educational atmosphere in the institute.</p>
+        <div class="ul">
+        <ul>
+            <B>“Grievances” include the following complaints of the aggrieved students, namely:</B>
+            <li>Demand of excess money other than that specified in the declared admission policy 
+                or approved by the competent authority to be charged by the institution;</li>
+            <li>Delay in conduct of examinations or declaration of results beyond that specified in the academic calendar;</li>
+            <li>On provision of student amenities as may have been promised or required to be provided by the institution.</li>
+            </ul>
+        </div>
+
+
+    <div class="Row">
+        <div class="Objective-col">
+            <h3>First</h3>
+            <p>To help the students to lodge their complaints and solve their 
+                problems related to academics, resources and personal grievances freely 
+                without any fear of victimization</p>
+        </div>
+   
+    
+        <div class="Objective-col">
+            <h3>Second</h3>
+            <p>To ensure an effective solutions to the student grievance <br> with an impartial and fair approach.
+               To prevent non-transparent or unfair practices adopted.</p>
+        </div>
+    
+    
+        <div class="Objective-col">
+            <h3>Third</h3>
+            <p>Advising students of the institution to respect the rights and 
+                dignity of one another and show utmost restraint and whenever any occasion 
+                of the rift arises.</p>
+        </div>
+ </section>
+<!---------------- Social Impact --------------->
+
+<section class="Mechanism">
+    <h1>How Does It work?</h1>
+    <p>SGRC (student Grievance Redressal Cell) helps you to achieve high ambitions to become
+       young and energetic civil leaders and contribute their innovative ideas to society. 
+       It provides free help to students and faculty. 
+       Also provides personal one-one sessions provided if required</p>
+       <div class="Row">
+           <div class="Mech-col">
+               <img src="{% static 'Social.jfif' %}">
+               <div class="Layer">
+                   <h3>Step 1: <br>Receiving Letter in SGRC Box
+                    The Complaint Box has been installed in the college. Students can put their grievances 
+                    in writing on the issues related to academics, infrastructure, examination, office and administration.</h3>
+               </div>
+           </div>
+           <div class="Mech-col">
+            <img src="{% static 'Social.jfif' %}">
+            <div class="Layer">
+                <h3><br>Step 2: <br>Unboxing the Letter by Grievance Coordinators
+                    Every Saturday the SGRC Box will be unboxed by the Coordinators.
+                <br><br>Step 3: <br>Analysis and Augmentation of the Issues
+                After receiving the Grievances, it will be analysed by the coordinators 
+                and passed on to the management or concerned departments for Redressal.</h3>
+            </div>
+        </div>
+        <div class="Mech-col">
+            <img src="{% static 'Social.jfif' %}">
+            <div class="Layer">
+                <h3>
+                    Step 4:<br>Redressal of the Issues
+                    Students’ Grievance Redressal Cell ensures that the grievances are resolved by the concerned 
+                    department or management within a span of the prescribed time of 30 days.</h3>
+            </div>
+        </div>
+        </div>
+</section>
+
+<!------------ Facilities -------------->
+
+<section class="Facilities">
+    <h1>Our Facilities</h1>
+    <p>SGR Cell outreach and student services programs designed to 
+        identify and provide services for individuals.</p>
+
+        <div class="Row">
+            <div class="facilities-col">
+                <img src="{% static 'images/check-mark.png' %}">
+                <h3>ASSURED SUPPORT</h3>
+                <p>Our co-ordinators will solve most of the problems faced by
+                    students and faculty.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="{% static 'images/smiley.png' %}">
+                <h3>EFFICIENT METHODOLOGY</h3>
+                <p>Students and Faculty can trust our method to solve argumentations. We can't promise all problems will be solved
+                    but solutions will be given.</p>
+                
+            </div>
+            <div class="facilities-col">
+                <img src="{% static 'images/users.png' %}">
+                <h3>COUNSELLING SERVICES</h3>
+                <p>If required our team will be doing counselling sessions with users on basis of one-to-one</p>
+            </div>
+        </div>
+</section>
+
+<!----- Testimonials ------>
+
+<section class="Testimonials">
+    <h1>What Our Students And Faculty Says</h1>
+    <p>We know that choosing us is a big decision that can change the course of your
+         life, so who better to get advice from than students who have been right where you are? 
+         Read the reviews and testimonials below to hear directly from a few SGRC students and alumni.</p>
+    <div class="Row">
+        <div class="Testimonial-col">
+            <img src="{% static 'images/user1.jpg' %}">
+            <p>“One of the best decisions I made during college was being part of the SGRC professional mentorship program.
+                I gained, discover, and improved many skills that will be valuable.”</p>
+                <h3>Yaqueline Rodriguez</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+        </div>
+            <div class="Testimonial-col">
+            <img src="{% static 'images/user2.jpg' %}"> 
+            
+            <p>“So far, my experience has been amazing. I am extremely grateful for this opportunity and the knowledge I have gained. 
+                As a result, I feel more comfortable and ready for all upcoming problems.”</p>  
+                <h3>Leonard Lee</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+               </div>
+    </div>
+</section>
+
+<!------- Call To Action ------------>
+
+<section class="cta">
+    <h1>Need More Help?</h1>
+    <a href="{% url 'contactuspage' %}" class="hero-btn">CONTACT US</a>
+</section>
+
+<!------- Footer ------------>
+<section class="footer">
+    <h4>About Us</h4>
+    <p>A Grievance is any discontent or dissatisfaction, whether expressed or not, 
+        whether valid or not, arising out of anything that is <br>directly connected to the institute, 
+        and which a student thinks, believes, or even feels, is unfair, unjust or inequitable.</p>
+        
+        <div class="icons">
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-linkedin-square"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made with<i class="fa fa-heart"></i><br>by Team</p>
+        <p>COPYRIGHT 2021</p>
+</section>
+
+<!-----JavaScript for Toggle Menu----->
+<script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu(){
+          navLinks.style.right = "0";
+      }
+      function hideMenu(){
+          navLinks.style.right = "-200";
+      }
+    </script>
+
+</body>
+</html>

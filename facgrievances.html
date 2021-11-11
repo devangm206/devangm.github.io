@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage Student Grievances</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>Grievances Registered by the students</h2>
+            <em>Total Grievances: {{data|length}}</em>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Contact Number</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th>Grievance</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.name}}</td>
+                            <td>{{i.contactnum}}</td>
+                            <td>{{i.email}}</td>
+                            <td></td>
+                            <td>{{i.grievance}}</td>
+                            <td>{{i.date_time}}</td>
+                            <th>{{i.is_solved}}</th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

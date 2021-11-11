@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Redressal Program</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link href=" https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+</head>
+<body>
+<section class="Sub-header">
+    <nav>
+        <a href="{% url 'homepage' %}"><img src="{% static 'images/logo (1).png' %}"></a>
+        <div class="nav-links">
+        <i class="fa fa-times" ></i>
+        <ul>
+        <li><a href="{% url 'homepage' %}">HOME</a></li>
+        <li><a href="{% url 'aboutuspage' %}">ABOUT</a></li>
+        <li><a href="{% url 'contactuspage' %}">CONTACT</a></li>
+        </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+    </nav>
+<h1>Contact Us</h1>
+</section>
+<!------- Contact Us ------------>
+
+<section class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.3674429020625!2d72.9725188145818!3d19.266380786978914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bb97393918f5%3A0x8daad21d2f9d3c8f!2sNew%20Horizon%20Institute%20of%20Technology%20%26%20Management!5e0!3m2!1sen!2sin!4v1631631741682!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+     
+</section>
+<section class="contact-us">
+    <div class="Row">
+        <div class="contact-col">
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>New Horizon Institute of Technology and Management,</h5>
+                        <p>Horizon Education Society's Complex, Anand Nagar, 
+                        <br>Kavesar, Off Ghodbunder Road, Thane (W)- 400615.</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+91 8745621340</h5>
+                        <p>Monday to Friday, 9AM to 5PM</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <span>
+                    <h5>info@sgrc.com</h5>
+                        <p>Email us your query</p>
+                </span>
+            </div>
+        </div>
+<div class="contact-col">
+
+<form action="" method="POST">
+    {% csrf_token%}
+    <input type="text" name="name" placeholder="Enter your name" required>
+    <input type="email" name="email" placeholder="Enter email Address" required>
+    <input type="text" name="subject" placeholder="Enter your subject" required>
+    <textarea rows="8" name="message" placeholder="Message" required></textarea>
+    <input type="submit" value="SUBMIT"  class="hero-btn red-btn">
+
+</form>
+</div>
+</div>
+</section>
+
+
+
+
+<!------- Footer ------------>
+<section class="footer">
+    <h4>About Us</h4>
+    <p>A Grievance is any discontent or dissatisfaction, whether expressed or not, 
+        whether valid or not, arising out of anything that is <br>directly connected to the institute, 
+        and which a student thinks, believes, or even feels, is unfair, unjust or inequitable.</p>
+        
+        <div class="icons">
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-linkedin-square"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made with<i class="fa fa-heart"></i><br>by Team</p>
+        <p>COPYRIGHT 2021</p>
+</section>
+
+<!-----JavaScript for Toggle Menu----->
+<script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu(){
+          navLinks.style.right = "0";
+      }
+      function hideMenu(){
+          navLinks.style.right = "-200";
+      }
+    </script>
+
+</body>
+</html>

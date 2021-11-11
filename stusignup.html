@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Redressal Program</title>
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'https://kit.fontawesome.com/ff14115f99.js' %}" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="Sub-header">
+    <nav>
+        <a><img src="{% static 'images/logo (1).png' %}"></a>
+        <div class="nav-links">
+        <i class="fa fa-times" ></i>
+        <ul>
+            <li><a href="{% url 'aboutuspage' %}">ABOUT</a></li>
+            <li><a href="{% url 'contactuspage' %}">CONTACT</a></li>
+        </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+    </nav>
+<h1>Student Signup</h1>
+</section>
+
+  <!------- Student Register & Login ------------>
+  <section class="Faculty-login">
+    <div class="container">
+       
+        <div class="cover">
+          <div class="front">
+            <img src="{% static 'images/banner2.jpg' %}">
+            <div class="text">
+                <span class="text-1">Just a step away</span>
+                <span class="text-2">Let's get started</span>
+            </div>
+          </div>
+        </div>
+        <div class="forms">
+            <div class="form-content">
+              <div class="login-form">
+                <div class="title">Signup</div>
+              <form action="{% url 'studentsignup'%} " method="POST">
+                {% csrf_token %}
+                <div class="input-boxes">
+                  <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                  </div>
+                  
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="text" name="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password1" placeholder="Enter your password" required>
+                  </div>
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password2" placeholder="Re-Enter your password" required>
+                  </div>
+                  <div>
+                    <input type="submit" value="SUBMIT" class="hero-btn red-btn">
+                  </div>
+
+                  {% if messages %}
+
+                  <ul>
+                    {% for message in messages %}
+                            <i><b>{{ message }}</b></i>
+                    {% endfor %}        
+                  </ul>
+                  {% endif %}
+                  <div class="text sign-up-text">Already have an account? <a href="{% url 'studentloginpage' %}">Login</a></div>
+                </div>
+                </form>
+        </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+<!-----JavaScript for Toggle Menu----->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200";
+    }
+  </script>
+
+</body>
+</html>

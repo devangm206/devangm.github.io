@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @devangm206
 - 👀 I’m interested in Python Programming 
-- 🌱 I’m currently learning Web Devlopment in Python
+- 🌱 I’m currently learning Web Development in Python
 - 
 
 <!---
